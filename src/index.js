@@ -5,7 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
 import ContactPage from "./ContactPage";
 import Navigation from "./Navigation";
+import About from "./About";
 import "./App.css";
+import RepositoriesPage from "./RepositoriesPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,6 +16,8 @@ root.render(
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/contact" element={<ContactPage />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/repositories" element={<RepositoriesPage />} />
     </Routes>
   </BrowserRouter>
 );
