@@ -12,8 +12,8 @@ const RepositoriesPage = () => {
       <h1>Repositories List Page</h1>
       <ul>
         {repositoriesList.map((repo) => (
-          <li>
-            <Link>{repo}</Link>
+          <li key={repo}>
+            <Link to={"/repositories/brebecaS/" + repo}>{repo}</Link>
           </li>
         ))}
       </ul>

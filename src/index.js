@@ -8,6 +8,8 @@ import Navigation from "./Navigation";
 import About from "./About";
 import "./App.css";
 import RepositoriesPage from "./RepositoriesPage";
+import RepositoryPage from "./RepositoryPage";
+import NotFountPage from "./NotFountPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +20,11 @@ root.render(
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<About />} />
       <Route path="/repositories" element={<RepositoriesPage />} />
+      <Route
+        path="/repositories/:userName/:repository/"
+        element={<RepositoryPage />}
+      />
+      <Route path="*" element={<NotFountPage />} />
     </Routes>
   </BrowserRouter>
 );
