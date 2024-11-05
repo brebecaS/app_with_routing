@@ -17,13 +17,15 @@ root.render(
     <Navigation />
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/about" element={<About />} />
-      <Route path="/repositories" element={<RepositoriesPage />} />
+      <Route path="/repositories/:userName" element={<RepositoriesPage />} />
       <Route
         path="/repositories/:userName/:repository/"
         element={<RepositoryPage />}
       />
+
       <Route path="*" element={<NotFountPage />} />
     </Routes>
   </BrowserRouter>

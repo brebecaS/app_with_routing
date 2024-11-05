@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { users } from "./constants";
 
 const RepositoriesPage = () => {
-  const repositoriesList = [
-    "shop_app",
-    "useEffect_exercises",
-    "useState_exercises",
-  ];
+  const params = useParams();
+
+  const repositoriesList = users.find(
+    (user) => user.userName === params.userName
+  ).repositories;
 
   return (
     <div>
-      <h1>Repositories List Page</h1>
+      <h1>{params.userName}'s repositories List Page</h1>
       <ul>
         {repositoriesList.map((repo) => (
           <li key={repo}>
-            <Link to={"/repositories/brebecaS/" + repo}>{repo}</Link>
+            <Link to={"/repositories/" + params.userName + "/" + repo}>
+              {repo}
+            </Link>
           </li>
         ))}
       </ul>
